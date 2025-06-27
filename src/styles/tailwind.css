@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #1a1a1a; /* Deep charcoal (primary) - gray-900 */
+    --color-primary-light: #2d2d2d; /* Subtle surface elevation - gray-800 */
+    --color-primary-dark: #0f0f0f; /* Rich black for depth - gray-950 */
+    
+    /* Secondary Colors */
+    --color-secondary: #2d2d2d; /* Component definition - gray-800 */
+    --color-secondary-light: #404040; /* Elevated surfaces - gray-700 */
+    --color-secondary-dark: #1a1a1a; /* Deep contrast - gray-900 */
+    
+    /* Accent Colors */
+    --color-accent: #00d4ff; /* Electric blue innovation - cyan-400 */
+    --color-accent-light: #33ddff; /* Lighter blue variant - cyan-300 */
+    --color-accent-dark: #0099cc; /* Darker blue variant - cyan-600 */
+    
+    /* Background Colors */
+    --color-background: #fafafa; /* Clean canvas - gray-50 */
+    --color-background-dark: #0f0f0f; /* Dark theme background - gray-950 */
+    --color-surface: #ffffff; /* Card backgrounds - white */
+    --color-surface-dark: #1a1a1a; /* Dark surface - gray-900 */
+    
+    /* Text Colors */
+    --color-text-primary: #1a1a1a; /* Optimal readability - gray-900 */
+    --color-text-primary-dark: #ffffff; /* Dark theme primary text - white */
+    --color-text-secondary: #666666; /* Supporting information - gray-500 */
+    --color-text-secondary-dark: #b3b3b3; /* Dark theme secondary text - gray-400 */
+    
+    /* Status Colors */
+    --color-success: #10b981; /* Project completion - emerald-500 */
+    --color-success-light: #34d399; /* Success light variant - emerald-400 */
+    --color-success-dark: #059669; /* Success dark variant - emerald-600 */
+    
+    --color-warning: #f59e0b; /* Timeline attention - amber-500 */
+    --color-warning-light: #fbbf24; /* Warning light variant - amber-400 */
+    --color-warning-dark: #d97706; /* Warning dark variant - amber-600 */
+    
+    --color-error: #ef4444; /* Form validation - red-500 */
+    --color-error-light: #f87171; /* Error light variant - red-400 */
+    --color-error-dark: #dc2626; /* Error dark variant - red-600 */
+    
+    /* Conversion Colors */
+    --color-conversion: #ff6b35; /* CTA buttons - orange-500 */
+    --color-conversion-light: #ff8a65; /* CTA hover state - orange-400 */
+    --color-conversion-dark: #e55100; /* CTA active state - orange-600 */
+    
+    /* Premium Accent */
+    --color-gold: #ffd700; /* Premium highlights - yellow-400 */
+    --color-gold-light: #ffed4e; /* Gold light variant - yellow-300 */
+    --color-gold-dark: #eab308; /* Gold dark variant - yellow-500 */
+    
+    /* Border Colors */
+    --color-border: #e5e5e5; /* Minimal borders - gray-200 */
+    --color-border-dark: rgba(255, 255, 255, 0.1); /* Dark theme borders - white/10 */
+    
+    /* Glassmorphism */
+    --color-glass: rgba(0, 212, 255, 0.1); /* Glass background - cyan/10 */
+    --color-glass-border: rgba(255, 255, 255, 0.2); /* Glass border - white/20 */
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-text-primary font-inter;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter font-semibold;
+  }
+  
+  .font-mono {
+    @apply font-jetbrains;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    background: var(--color-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-glass-border);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-premium {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 8px 40px rgba(0, 212, 255, 0.2);
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-subtle {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+  
+  .transition-premium {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

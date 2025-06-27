@@ -1,0 +1,21 @@
+:root {
+  --color-jet-black: #000000;
+  --color-pure-white: #FFFFFF;
+  --color-light-green: #B5FF6D;
+  --color-muted-olive: #8A9A5B;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  background: var(--color-jet-black);
+  color: var(--color-pure-white);
+}
+
+* {
+  box-sizing: border-box;
+  line-height: normal;
+  font-family: inherit;
+  margin: unset;
+}
